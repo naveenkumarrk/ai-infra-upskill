@@ -1,140 +1,99 @@
-# ROADMAP — 16-Week Core Curriculum
+# ROADMAP — Basics → Mastery (ordered syllabus)
 
-Each week has a theme and 6 daily subtopics. `dayInWeek` 0–5 maps to subtopics 1–6;
-`dayInWeek` 6 is a Review Day. See `COACH.md` for the date math and cycling rules.
+The single source of truth for topic **order**. The coach teaches the next 2–3 unchecked
+topics from `PROGRESS.md` each run, strictly in this order, Level 0 → Level 4. After the
+list is complete, it starts Round 2 from the top at deeper/staff depth.
 
-## Phase 1 — System Design (Weeks 1–4)
+## Level 0 — Foundations (fast diagnostic sprint)
+1. Machine model — CPU, memory hierarchy, processes vs threads
+2. Networking — sockets, TCP/IP, HTTP, DNS
+3. Complexity & core data structures
+4. Concurrency basics — locks, atomics, async, races
 
-**Week 1 — System Design Primitives**
-1. Latency, Throughput & Back-of-the-envelope estimation
-2. Load Balancing
-3. Caching
-4. CDN & Edge
-5. DNS / TCP / HTTP / gRPC
-6. Availability, Redundancy, SLA/SLO
+## Level 1 — System Design
+5. Latency, throughput & back-of-the-envelope estimation
+6. Load balancing
+7. Caching strategies
+8. CDN & edge
+9. API design & protocols (REST / gRPC / WebSockets)
+10. Availability, redundancy, SLA/SLO
+11. SQL vs NoSQL
+12. Indexing
+13. Replication
+14. Sharding & partitioning
+15. CAP & consistency models
+16. Transactions & isolation
+17. Message queues & pub/sub
+18. Kafka internals
+19. Rate limiting
+20. Consistent hashing
+21. Idempotency & exactly-once
+22. Backpressure & flow control
+23. Design drill — URL shortener & news feed
+24. Design drill — chat system & search typeahead
 
-**Week 2 — Data Storage**
-1. SQL vs NoSQL
-2. Indexing
-3. Replication
-4. Sharding
-5. CAP & Consistency
-6. Transactions & Isolation
+## Level 2 — AI / LLM Infrastructure
+25. Tokens, context & embeddings
+26. Prompt engineering patterns
+27. Tool calling & structured output
+28. MCP (Model Context Protocol)
+29. Agents & orchestration loops
+30. LLM cost & latency modeling
+31. RAG — chunking strategies
+32. Vector databases (HNSW, IVF)
+33. Hybrid search & reranking
+34. RAG evaluation
+35. Advanced RAG (query rewriting, GraphRAG)
+36. GPU fundamentals for inference
+37. KV cache & attention memory
+38. Continuous batching (vLLM)
+39. Quantization (INT8/FP8, GPTQ/AWQ)
+40. Throughput vs latency tuning
+41. Serving infrastructure (Triton, TensorRT-LLM)
+42. Fine-tuning vs RAG; LoRA / PEFT
+43. Distributed training (data / model / pipeline parallelism)
+44. Training data pipelines & checkpointing
+45. AI system design — ChatGPT-like & production RAG
+46. AI system design — LLM gateway & agent platform
+47. AI system design — eval/observability & vector search at scale
 
-**Week 3 — Scaling & Messaging**
-1. Queues & Pub/Sub
-2. Kafka Internals
-3. Rate Limiting
-4. Consistent Hashing
-5. Idempotency
-6. Backpressure
+## Level 3 — Distributed Systems & Performance
+48. Consensus & Raft
+49. Consistency models (deep)
+50. Replication & quorums
+51. Leader election & failure detection
+52. Logical clocks & ordering
+53. Distributed transactions & sagas
+54. Observability — metrics, logs, traces
+55. OpenTelemetry & distributed tracing
+56. SLOs, SLIs & error budgets
+57. Retries, circuit breakers & failure modes
+58. Chaos engineering
+59. Incident response & postmortems
+60. Profiling & flame graphs
+61. Concurrency models (threads / async / actors)
+62. Memory management & allocators
+63. Rust systems programming
+64. Go runtime & concurrency
+65. Lock-free & zero-copy (C++)
+66. Containers — namespaces & cgroups
+67. Kubernetes architecture & scheduling
+68. Service mesh & networking
+69. eBPF
+70. io_uring & Linux I/O
 
-**Week 4 — System Design Practice**
-1. URL Shortener
-2. News Feed
-3. Chat System
-4. Rate Limiter
-5. Search Typeahead
-6. Distributed Cache
+## Level 4 — Mastery / Staff
+71. Cost reasoning in architecture
+72. GPU scheduling & capacity planning
+73. Failure recovery for AI systems
+74. Multi-region & disaster recovery
+75. Multi-tenant AI platform design
+76. Real-time ML feature store
+77. Staff coding under rubric
+78. System design mock — general
+79. System design mock — AI infra
+80. Behavioral / STAR + design docs
+81. Leveling & negotiation
+82. Build-in-public capstone
 
-## Phase 2 — AI / LLM Infrastructure (Weeks 5–9)
-
-**Week 5 — LLM Foundations**
-1. Tokens / Context / Embeddings
-2. Prompt Engineering
-3. Tool Calling
-4. MCP
-5. Agents
-6. Cost & Latency Modeling
-
-**Week 6 — RAG**
-1. Chunking
-2. Vector Databases
-3. Hybrid Search
-4. Reranking
-5. Evaluation
-6. Advanced RAG
-
-**Week 7 — Inference**
-1. GPU Fundamentals
-2. KV Cache
-3. Continuous Batching
-4. Quantization
-5. Throughput vs Latency
-6. Serving Infrastructure
-
-**Week 8 — Training Infrastructure**
-1. Fine-tuning vs RAG
-2. LoRA
-3. Distributed Training
-4. Data Pipelines
-5. Checkpointing
-6. Experiment Tracking
-
-**Week 9 — AI System Design**
-1. ChatGPT
-2. Production RAG
-3. LLM Gateway
-4. Agent Platform
-5. Evaluation Platform
-6. Vector Search
-
-## Phase 3 — Distributed Systems & Performance (Weeks 10–13)
-
-**Week 10 — Distributed Systems**
-1. Raft
-2. Consistency
-3. Replication
-4. Leader Election
-5. Logical Clocks
-6. Distributed Transactions
-
-**Week 11 — Reliability**
-1. Observability
-2. OpenTelemetry
-3. SLOs
-4. Retries
-5. Chaos Engineering
-6. Incident Response
-
-**Week 12 — Performance**
-1. Profiling
-2. Concurrency
-3. Memory
-4. Rust Systems Programming
-5. Go Runtime
-6. Lock-free Programming
-
-**Week 13 — Infrastructure**
-1. Containers
-2. Kubernetes
-3. Kubernetes Scheduler
-4. Service Mesh
-5. eBPF
-6. io_uring
-
-## Phase 4 — Staff Signals & Launch (Weeks 14–16)
-
-**Week 14 — Advanced AI Infrastructure**
-1. Cost Reasoning
-2. GPU Scheduling
-3. Failure Recovery
-4. Multi-region AI
-5. Multi-tenant AI Platform
-6. Feature Store
-
-**Week 15 — Interview Preparation**
-1. Coding
-2. System Design
-3. AI System Design
-4. Behavioral
-5. Design Documents
-6. Negotiation
-
-**Week 16 — Build in Public**
-1. Portfolio Scope
-2. Architecture
-3. Build Core
-4. Ship
-5. Technical Blog
-6. Open Source
+**Total: 82 topics.** At 2–3/day, one full pass ≈ 4–6 weeks, then Round 2 goes deeper.

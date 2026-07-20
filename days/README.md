@@ -1,5 +1,5 @@
-# Daily Lessons
+# Daily Lessons (coach output)
 
-One file per day, named `day-<NNN>-w<week>d<day>-<slug>.md` (e.g.
-`day-001-w1d1-latency-throughput.md`). The morning routine appends a new file here each
-day. Empty for now — Day 1 lands on the first run.
+One file per run: `day-<NNN>-<slug>.md`. Each lesson is lean (~700–1,000 words) and covers
+the next 2–3 topics from `../ROADMAP.md`, basics → mastery. The morning routine writes a
+new file here and checks off topics in `../PROGRESS.md`.
