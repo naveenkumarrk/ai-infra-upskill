@@ -1,15 +1,15 @@
 # PROGRESS TRACKER
 
-**Delivered: 0 / 82**  ·  **Current level: 0 — Foundations**  ·  Pace: 2–3 topics/run
+**Delivered: 3 / 82**  ·  **Current level: 0 — Foundations**  ·  Pace: 2–3 topics/run
 
 > The coach checks off topics here after teaching them. Look here any time to see exactly
 > where you are and what's next. Levels: 0 Foundations → 1 System Design → 2 AI/LLM Infra
 > → 3 Distributed Systems & Performance → 4 Mastery/Staff.
 
 ## Level 0 — Foundations
-- [ ] 1. Machine model — CPU, memory hierarchy, processes vs threads
-- [ ] 2. Networking — sockets, TCP/IP, HTTP, DNS
-- [ ] 3. Complexity & core data structures
+- [x] 1. Machine model — CPU, memory hierarchy, processes vs threads
+- [x] 2. Networking — sockets, TCP/IP, HTTP, DNS
+- [x] 3. Complexity & core data structures
 - [ ] 4. Concurrency basics — locks, atomics, async, races
 
 ## Level 1 — System Design
