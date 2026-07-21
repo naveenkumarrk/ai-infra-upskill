@@ -1,6 +1,6 @@
 # PROGRESS TRACKER
 
-**Delivered: 3 / 82**  ·  **Current level: 0 — Foundations**  ·  Pace: 2–3 topics/run
+**Delivered: 6 / 82**  ·  **Current level: 1 — System Design**  ·  Pace: 2–3 topics/run
 
 > The coach checks off topics here after teaching them. Look here any time to see exactly
 > where you are and what's next. Levels: 0 Foundations → 1 System Design → 2 AI/LLM Infra
@@ -10,11 +10,11 @@
 - [x] 1. Machine model — CPU, memory hierarchy, processes vs threads
 - [x] 2. Networking — sockets, TCP/IP, HTTP, DNS
 - [x] 3. Complexity & core data structures
-- [ ] 4. Concurrency basics — locks, atomics, async, races
+- [x] 4. Concurrency basics — locks, atomics, async, races
 
 ## Level 1 — System Design
-- [ ] 5. Latency, throughput & back-of-the-envelope estimation
-- [ ] 6. Load balancing
+- [x] 5. Latency, throughput & back-of-the-envelope estimation
+- [x] 6. Load balancing
 - [ ] 7. Caching strategies
 - [ ] 8. CDN & edge
 - [ ] 9. API design & protocols (REST / gRPC / WebSockets)
