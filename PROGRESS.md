@@ -1,6 +1,6 @@
 # PROGRESS TRACKER
 
-**Delivered: 6 / 82**  ·  **Current level: 1 — System Design**  ·  Pace: 2–3 topics/run
+**Delivered: 9 / 82**  ·  **Current level: 1 — System Design**  ·  Pace: 2–3 topics/run
 
 > The coach checks off topics here after teaching them. Look here any time to see exactly
 > where you are and what's next. Levels: 0 Foundations → 1 System Design → 2 AI/LLM Infra
@@ -15,9 +15,9 @@
 ## Level 1 — System Design
 - [x] 5. Latency, throughput & back-of-the-envelope estimation
 - [x] 6. Load balancing
-- [ ] 7. Caching strategies
-- [ ] 8. CDN & edge
-- [ ] 9. API design & protocols (REST / gRPC / WebSockets)
+- [x] 7. Caching strategies
+- [x] 8. CDN & edge
+- [x] 9. API design & protocols (REST / gRPC / WebSockets)
 - [ ] 10. Availability, redundancy, SLA/SLO
 - [ ] 11. SQL vs NoSQL
 - [ ] 12. Indexing
