@@ -1,23 +1,26 @@
 # PROGRESS TRACKER
 
-**Delivered: 9 / 82**  ·  **Current level: 1 — System Design**  ·  Pace: 2–3 topics/run
+**Delivered: 0 / 82**  ·  **Current level: 0 — Foundations**  ·  Pace: 2–3 topics/run
+
+> **RESET 2026-07-22** — fresh start with COACH v4 + THE SYSTEM (life-rpg). Day 001 is
+> next; days 001–003 taught before the reset are preserved in `archive/pre-reset-2026-07-22/`.
 
 > The coach checks off topics here after teaching them. Look here any time to see exactly
 > where you are and what's next. Levels: 0 Foundations → 1 System Design → 2 AI/LLM Infra
 > → 3 Distributed Systems & Performance → 4 Mastery/Staff.
 
 ## Level 0 — Foundations
-- [x] 1. Machine model — CPU, memory hierarchy, processes vs threads
-- [x] 2. Networking — sockets, TCP/IP, HTTP, DNS
-- [x] 3. Complexity & core data structures
-- [x] 4. Concurrency basics — locks, atomics, async, races
+- [ ] 1. Machine model — CPU, memory hierarchy, processes vs threads
+- [ ] 2. Networking — sockets, TCP/IP, HTTP, DNS
+- [ ] 3. Complexity & core data structures
+- [ ] 4. Concurrency basics — locks, atomics, async, races
 
 ## Level 1 — System Design
-- [x] 5. Latency, throughput & back-of-the-envelope estimation
-- [x] 6. Load balancing
-- [x] 7. Caching strategies
-- [x] 8. CDN & edge
-- [x] 9. API design & protocols (REST / gRPC / WebSockets)
+- [ ] 5. Latency, throughput & back-of-the-envelope estimation
+- [ ] 6. Load balancing
+- [ ] 7. Caching strategies
+- [ ] 8. CDN & edge
+- [ ] 9. API design & protocols (REST / gRPC / WebSockets)
 - [ ] 10. Availability, redundancy, SLA/SLO
 - [ ] 11. SQL vs NoSQL
 - [ ] 12. Indexing
