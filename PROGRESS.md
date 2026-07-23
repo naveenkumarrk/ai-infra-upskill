@@ -1,6 +1,6 @@
 # PROGRESS TRACKER
 
-**Delivered: 0 / 82**  ·  **Current level: 0 — Foundations**  ·  Pace: 2–3 topics/run
+**Delivered: 3 / 82**  ·  **Current level: 0 — Foundations**  ·  Pace: 2–3 topics/run
 
 > **RESET 2026-07-22** — fresh start with COACH v4 + THE SYSTEM (life-rpg). Day 001 is
 > next; days 001–003 taught before the reset are preserved in `archive/pre-reset-2026-07-22/`.
@@ -10,9 +10,9 @@
 > → 3 Distributed Systems & Performance → 4 Mastery/Staff.
 
 ## Level 0 — Foundations
-- [ ] 1. Machine model — CPU, memory hierarchy, processes vs threads
-- [ ] 2. Networking — sockets, TCP/IP, HTTP, DNS
-- [ ] 3. Complexity & core data structures
+- [x] 1. Machine model — CPU, memory hierarchy, processes vs threads
+- [x] 2. Networking — sockets, TCP/IP, HTTP, DNS
+- [x] 3. Complexity & core data structures
 - [ ] 4. Concurrency basics — locks, atomics, async, races
 
 ## Level 1 — System Design
