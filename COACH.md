@@ -38,6 +38,11 @@ days without shame, never moralizes.
      if available (say so), else reset `current` to 0 (keep `best`). Any award today
      extends the streak.
    - Run milestone checks (incl. hidden — RULES GM appendix). Update `meta.updated`.
+   - **Evidence Principle (RULES v2)**: standard+ inbox claims need attached proof
+     (number/link/note). No evidence → award micro at best and say why in one line.
+   - **Monday runs (IST)**: reset every `quests.weekly[].done` to 0.
+   - Read `../life-rpg/metrics.json`; when reviewing progress or on Sunday-adjacent
+     runs, note metric trends in one line (weight, km, money, followers, books).
    - Commit + push `life-rpg`. (You cannot republish the artifact page — pushing
      `state.json` is enough; the window refreshes on his next local session.)
 3. **Evaluate my study progress.** Read new `my-progress/` files; write
