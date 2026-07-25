@@ -1,6 +1,6 @@
 # PROGRESS TRACKER
 
-**Delivered: 6 / 82**  ·  **Current level: 1 — System Design**  ·  Pace: 2–3 topics/run
+**Delivered: 7 / 82**  ·  **Current level: 1 — System Design**  ·  Pace: 2–3 topics/run
 
 > **RESET 2026-07-22** — fresh start with COACH v4 + THE SYSTEM (life-rpg). Day 001 is
 > next; days 001–003 taught before the reset are preserved in `archive/pre-reset-2026-07-22/`.
@@ -18,7 +18,7 @@
 ## Level 1 — System Design
 - [x] 5. Latency, throughput & back-of-the-envelope estimation
 - [x] 6. Load balancing
-- [ ] 7. Caching strategies
+- [x] 7. Caching strategies
 - [ ] 8. CDN & edge
 - [ ] 9. API design & protocols (REST / gRPC / WebSockets)
 - [ ] 10. Availability, redundancy, SLA/SLO
