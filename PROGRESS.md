@@ -1,6 +1,6 @@
 # PROGRESS TRACKER
 
-**Delivered: 9 / 82**  ·  **Current level: 1 — System Design**  ·  Pace: 2–3 topics/run
+**Delivered: 10 / 82**  ·  **Current level: 1 — System Design**  ·  Pace: 2–3 topics/run
 
 > **RESET 2026-07-22** — fresh start with COACH v4 + THE SYSTEM (life-rpg). Day 001 is
 > next; days 001–003 taught before the reset are preserved in `archive/pre-reset-2026-07-22/`.
@@ -21,7 +21,7 @@
 - [x] 7. Caching strategies
 - [x] 8. CDN & edge
 - [x] 9. API design & protocols (REST / gRPC / WebSockets)
-- [ ] 10. Availability, redundancy, SLA/SLO
+- [x] 10. Availability, redundancy, SLA/SLO
 - [ ] 11. SQL vs NoSQL
 - [ ] 12. Indexing
 - [ ] 13. Replication
