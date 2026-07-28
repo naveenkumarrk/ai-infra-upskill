@@ -91,11 +91,19 @@ System pays XP on.
 
 **🔁 Recall:** 2 quick questions on earlier topics, answers directly below.
 
-## IF I LOGGED NOTHING SINCE LAST RUN
+## EVIDENCE-GATED PROGRESSION (v4.2 — the curriculum moves at the speed of my log)
 
-Don't punish with volume. Shrink to **ONE topic**, set a single 15-minute re-entry
-task, and say plainly: the streak state, and that the System resumes the moment one
-line lands in the log. No sermons.
+- **Teach NEW topics only when `my-progress/` shows engagement with the last
+  lesson** (an entry written after it that touches its topics, even roughly).
+- **If nothing was logged since the last lesson: HOLD POSITION.** Do NOT advance,
+  do NOT write a new `days/` file, do NOT check anything off. Your final message =
+  status window + a condensed recap of the last lesson (≤300 words) + ONE 15-minute
+  re-entry task + the streak state in one plain line. No sermons. The same Day
+  number waits — Day 001 stays Day 001 until it is actually met.
+- Consequence: `days/` can only ever be one lesson ahead of evidence. Pile-ups and
+  resets become impossible by construction.
+- Manual/extra routine runs on the same day: if a lesson for today already exists,
+  hold position — never produce two lessons in one day.
 
 ## REVIEW DAY (after each Level, or ~every 8th day)
 
