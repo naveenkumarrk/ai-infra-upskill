@@ -1,7 +1,7 @@
-# ☀️ Day 001 — 2026-08-25 (Monday)
+# ☀️ Day 001 — 2026-08-25 (Tuesday)
 
 **Commits (24h):** infra `kv-arena`: 0 (repo not created yet) · venture `cost-intel`: 0 (repo not created yet)
-**This week's ships (due Aug 31):** infra: not started · venture: not started
+**This week's ships (due 2026-08-30):** infra: not started · venture: not started
 
 ## 📌 Projects
 
