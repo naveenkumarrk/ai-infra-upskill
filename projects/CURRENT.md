@@ -1,6 +1,8 @@
 # CURRENT
 
-## Infra project — kv-arena (September 2026 cycle, kicked off 2026-08-24)
+## Infra project — kv-arena (kicked off 2026-08-24)
+
+Month: 2026-09
 
 **Pitch:** The missing public benchmark of KV-cache storage backends. A runnable harness that benchmarks LMCache's remote backends (CPU RAM, SSD, Redis/Valkey, Mooncake, S3) under realistic multi-turn and agentic traffic, reporting TTFT recovery, p99 lookup/load latency, and cost per cached token. LMCache's own blog admits these comparisons only exist privately inside Tencent — nothing public exists. Findings get upstreamed as LMCache issues/PRs.
 
@@ -14,7 +16,9 @@
 - **W3 (Sep 8–14):** Add Redis/Valkey + Mooncake backends; one rented GPU node for end-to-end runs; cost-per-cached-token math.
 - **W4 (Sep 15–21):** Statistics pass (variance, repeats), README with the numbers up top, benchmark writeup published, findings filed upstream as LMCache issues.
 
-## Venture — effective-cost intelligence for LLM API buyers (September 2026 cycle, kicked off 2026-08-24)
+## Venture — effective-cost intelligence for LLM API buyers (kicked off 2026-08-24)
+
+Month: 2026-09
 
 **Pitch:** Continuously measure what teams ACTUALLY pay per token across LLM providers — effective cache-hit rates on their traffic shape, silent effective-cost degradation, per-customer margin — and output dollar-denominated recommendations (restructure prompts for caching, switch provider tiers, cap unprofitable customers). Validated demand: 566-upvote Reddit analysis of provider cache-hit inconsistency ("wrecks cost predictability") with an explicit "you'd be the first stand-alone tool in the space" ask. Differentiated per validation data: sells decisions and dollars, not dashboards.
 
@@ -28,7 +32,7 @@
 - **W3 (Sep 8–14):** $149 audit pipeline (upload usage export → effective-cost report); Stripe checkout; index expanded.
 - **W4 (Sep 15–21):** Launch week — HN Show HN, the original Reddit communities, 10 direct outreach messages to people who complained in the validated threads; iterate on what converts.
 
-## This week's ships (week of 2026-08-24)
+## This week's ships (week of 2026-08-24, due 2026-08-30)
 
 **Infra:** Claim and submit first LMCache PR via https://github.com/LMCache/LMCache/issues/3372 (their documented /claim flow, 2-day assignment SLA). Public artifact: the PR itself.
 **Venture:** Landing page + free cache-savings estimator deployed and posted in one community thread. Distribution action: reply with the estimator link in one of the validated cache-cost complaint threads.
