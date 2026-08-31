@@ -1,14 +1,12 @@
-# PROGRESS — v5
+# PROGRESS — v6
 
-**Day counter:** 1 (day-001 = 2026-08-25)
+**Start date:** 2026-08-31 (= day 001; day number is always days-since-start + 1)
+
+## Progress log (from Naveen's check-ins — dated entries only, never inferred)
+- (none yet)
 
 ## Taught topics
-- day-001 · LMCache storage-backend interface (put/get/contains contract; LMCacheEngine sits above it) — infra
-- day-001 · Effective cost ≠ list price (cache-read discount vs cache-write premium; blended-cost formula) — venture
-
-## Track activity
-- infra (kv-arena): last_commit_date: none
-- venture (cost-intel): last_commit_date: none
+- (reset for v6 — fresh start)
 
 ## Skill gaps (flagged for revisit)
 - (none yet)
