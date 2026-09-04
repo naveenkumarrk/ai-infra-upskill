@@ -251,7 +251,7 @@ kv-arena is the public benchmark of KV-cache storage backends for LMCache that d
 
 - **Week 1 (Sep 7 to 13):** repo exists, README states the question. vLLM plus LMCache running on a rented 4090 with the CPU-RAM backend. Baseline numbers without LMCache recorded. Claim an issue on LMCache's onboarding umbrella, issue 3372, which has a documented `/claim` flow.
 - **Week 2 (Sep 14 to 20):** your async load generator produces two workload shapes: multi-turn chat with growing context, and agentic with a shared 2k-token prefix across many requests. TTFT with and without LMCache CPU-RAM, at three concurrency levels.
-- **Week 3 (Sep 21 to 27):** add the local-disk backend. Measure TTFT recovery after a simulated eviction. Record variance across three runs. Your first LMCache or vLLM pull request submitted, even if it is a docs or test fix. vLLM has 10 open good-first-issues as of today; LMCache's onboarding issue lists more.
+- **Week 3 (Sep 21 to 27):** add the local-disk backend. Measure TTFT recovery after a simulated eviction. Record variance across three runs. Your first LMCache or vLLM pull request submitted, even if it is a docs or test fix, as long as it fixes something real that you hit or that a maintainer labelled. vLLM has 10 open good-first-issues as of today; LMCache's onboarding issue lists more. Read the pull request rule in section 13 before you open it.
 - **Week 4 (Sep 28 to Oct 4):** README rewritten to lead with a table of numbers, a diagram of the harness, and the first "what broke" section. Post the repo once on X and once in the LMCache Slack.
 
 Total compute this month: about 25 GPU hours, about ₹800.
@@ -758,6 +758,57 @@ Next ship: <one sentence, due next Sunday>
 If the first line has no link, the week did not ship, and Monday's first task is the smallest commit that fixes that.
 
 ---
+
+## 13. What X shows, September 2026: who is building what, where the money is, and the gaps
+
+I spent an hour logged into X on 2026-09-04 reading what inference and GPU people actually post, what pays, and what people say is missing. Slop was filtered out. What follows is only posts with a name, a date and a number attached. Treat single posts as anecdotes, not market data.
+
+### Your learning projects are exactly what people post, and the posts travel
+
+- A 12M-parameter LLM trained on a self-written Rust and CUDA framework with flash attention kernels and a BPE tokenizer: 3,500 likes, April 2026. Speculative decoding added two days later for a 3x throughput gain.
+- A GPT-2 124M inference engine in about 1,000 lines of C++: 708 likes, posted the day before this was written. The same author's 100-line neural network inference engine: 1,700 likes.
+- A GPU serving engine from scratch with Triton, CUDA graphs, continuous batching, paged KV cache and chunked prefill, tested on an L4 and an A100 via Modal: 127 likes, August 2026.
+- Flash attention from scratch in CUDA: 263 likes, March 2026. A mini-vllm with async continuous batching and streaming, August 2026. Prefill and decode disaggregation from scratch, "from CUDA kernel all the way up to adaptive router," April 2026. A C++ and CUDA engine built in one month hitting 109 tokens per second on an RTX 3060 against vLLM's 110, September 2025.
+- A "Day 1 of 90 of Inference Engineering" public journey got 103 likes on day one, July 2026.
+
+Two conclusions. First, mini-vllm, the kernels, the speculative decoder and the disaggregated serving project are all things one person has visibly done in weeks, so the month-by-month feasibility here is not theoretical. Second, every learning project in this roadmap is a post. Post each one with its chart the day it works. That is your distribution, and it is why hiring posts like "150k to 250k base plus equity, comment with something you have built" (144 replies, July 2026) exist.
+
+### The pull request rule, learned the hard way by someone else
+
+On 2026-05-24 the vLLM account announced, to 194,000 views, that a contributor had been banned for submitting a PR that "attempted to solve a non-existent issue and was submitted as part of a PR training workflow for resume building." Every upstream contribution in this roadmap therefore follows one rule: it fixes something you actually hit while building, or something a maintainer labelled, and it carries a reproduction. One documentation fix is a fine first PR. Five documentation fixes in a row is the pattern that gets you noticed for the wrong reason.
+
+### Where the money actually is for someone in your position
+
+**Expert-data platforms.** This is the one channel visible on X that pays non-Indian USD rates to India-based engineers right now, weekly, via Stripe or Wise, with no relocation and no years-of-experience gate beyond passing an assessment.
+
+| Platform | Role and rate seen | Date | Caveat |
+|---|---|---|---|
+| Mercor | Software engineer, $25 to $30 an hour, 3+ years, fully remote | August 2026, three separate posts | Assessment-gated. The "3+ years" is stated, so apply in 2027 unless a junior tier opens. |
+| Mercor | ML engineer with coding-agent experience, $85 an hour | August 2026 | Requires demonstrated Claude Code, Codex or Cursor workflow experience, which you have. |
+| Mercor x Shopify | Conversation annotator, $40 to $50 an hour, about 5 hours a week | August 2026 | No coding. Small volume. |
+| Outlier (Scale AI) | Coding contributor, part-time 20 hours a week, from $13.75 an hour; referral posts claim up to $90 for software and math experts | May and August 2026 | Paused new assessments in April 2026 per two posts. Rates in referral posts are inflated. |
+| DataAnnotation, Alignerr, Handshake AI | $20 to $60 an hour for coding and technical evaluation | April to July 2026 | Same pattern: assessment, then unpredictable volume. |
+
+The honest read: at $25 an hour for 8 hours a week you would earn about ₹80,000 a month, which is more than your salary, paid in USD by a non-Indian company, doing evaluation work that is the same muscle month 5 of this roadmap trains. It is cash, not career. It does not go on the CV as engineering experience and it does not build the public record. So the rule is: at most 8 hours a week, only after the week's ship is on track, and only from month 3 onward when the compute bill starts to matter. It funds the GPUs. It is not the plan.
+
+**Consulting.** One well-known researcher posted a $2,000 an hour LLM consulting rate in February 2025. That is the top of the distribution, earned by a public record most people never build, and it is not a plan either. An Indian freelancer posted $20 to $30 an hour LLM contract work in 2024, which is the realistic bottom rung and matches the March 2027 checkpoint in section 0.
+
+**Products, and the margin problem that is now the market.** A coding agent crossed a $15M run rate this week and described itself as "one of the largest buyers of open model tokens." An indie founder posted $821 in monthly revenue against $222 in LLM cost two weeks after launch and said he wished more people talked about that part. Another founder posted that "MRR is meaningless in 2026 because of AI infra costs." A token-reduction tool with 100 paying customers went open source at $571 a month. Someone is selling unlimited multi-model access for $8 a month, which is pure token arbitrage. And a user documented, to 128 likes, a caching and accounting leak on a provider's subscription across four different coding harnesses.
+
+Read together: inference cost is now the cost of goods for a whole generation of products, the people paying it do not trust the meters, and a public tool that measures effective cost honestly has demand behind it. That is the month 5 effective-cost probe, and it is why the parked venture in section 10 reopens on evidence rather than never.
+
+### Gaps people are asking for, in their own words
+
+Single posts each, so these are project seeds to validate, not confirmed demand.
+
+- "Retrieval evals are the most underbuilt part of agent infra. Nobody has the equivalent of pytest for retrieval quality yet." April 2026.
+- "People are abusing trials more than ever for free inference. Someone should build a simple solution based on browser fingerprint, IPs, card numbers." May 2026.
+- "Why is there no platform to match harness creators with eval creators?" February 2026.
+- "I wish there was some way to easily eval various coding agents on technical documentation and autonomously fix bugs and rerun evals." August 2026.
+- "Someone should build the opposite of Cerebras. Instead of crazy fast inference at a higher price, run the best models more slowly but dirt cheap." August 2026, 102 likes and a poll.
+- "90% of your KV cache never gets reused." July 2026, 475 likes, on prompt caching as the highest-leverage optimisation nobody configures properly.
+
+Four of the six are evals and cost. That is the hybrid this roadmap builds toward, and it is not a coincidence.
 
 ## Verification notes
 
