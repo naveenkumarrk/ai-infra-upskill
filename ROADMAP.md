@@ -141,6 +141,8 @@ The daily routine is gone. You said you did not follow it, so it was dead weight
 
 **Languages.** Python is the working language throughout. C++ starts in month 1 and stays a weekly habit because vLLM, SGLang, TensorRT-LLM and CUTLASS are Python over C++ and CUDA. Go starts in month 4 because the India-remote listings ask for it and Kubernetes operators are written in it. Rust is parked: the inference stacks you will contribute to are not Rust, and your earlier language priority list was written before the listings were read.
 
+**Two kinds of project.** Each month has one **portfolio project**, which is public, measured, polished, and exists to get you hired. Each month also has two to four **learning projects**, which are small from-scratch builds that exist to make the theory stick: your own paged KV cache, your own continuous-batching scheduler, your own speculative decoder, your own KV-aware router. They live in one repo, `learning-lab`, one folder each, with a short README that states the number you measured. They do not need polish. They need to work and to have taught you something you can explain. Each is sized for a Friday evening or a Saturday morning, three to six hours. The portfolio ship comes first every week; a learning project is what you do after it is on track, never instead of it. Interviewers love these because "I wrote a paged KV block manager to understand vLLM's" survives three follow-ups where "I read the vLLM docs" does not.
+
 **No tutorial-only weeks.** Every week ends in a commit to a project repo. Reading is Friday. If a week has no commit, the following Monday's first task is the smallest commit that ends the streak.
 
 ---
@@ -229,6 +231,13 @@ Resources:
 - **Linux perf wiki** (free). [perfwiki.github.io](https://perfwiki.github.io/main/). Note the URL moved off kernel.org. You need `perf top` and `perf record` only.
 - **Pro Git, 2nd edition** (free). [git-scm.com/book](https://git-scm.com/book/en/v2). Chapters 2, 3 and 5. You will be rebasing onto upstream main every week from now on.
 
+### Month 1 learning projects
+
+- **nanoGPT with a KV cache.** Take the model from Karpathy's "Let's build GPT" or nanoGPT and write the generation loop yourself twice: once recomputing attention over the whole sequence every step, once with a KV cache. Run both on your Mac for 512 generated tokens and plot tokens per second against sequence length. The first curve falls, the second stays flat. You now know why the KV cache exists and what it costs in memory, from your own code.
+- **llm-loadgen.** The async load generator from section 3 of this month, made into a proper tool: N concurrent streams, per-token timestamps, TTFT and ITL percentiles, goodput under an SLO you pass on the command line, CSV out. You will use it every month, and reproducing vLLM's own benchmark numbers within 10% is the acceptance test.
+- **memplan, in C++.** A command-line tool that reads a Hugging Face `config.json`, computes weight memory and KV bytes per token for a given dtype, and prints the maximum concurrent sequences at a given context length for a given GPU memory size. Your first real C++ program with a JSON library, a struct, and a reason to exist.
+- **Optional: a BPE tokenizer.** Two hundred lines of Python that train byte-pair merges on a text file and encode and decode. Karpathy's tokenizer lecture is the guide. Useful because token counts drive every cost and memory number you will ever compute.
+
 ### The month 1 project: kv-arena, part one
 
 kv-arena is the public benchmark of KV-cache storage backends for LMCache that does not yet exist. LMCache's own blog admits the comparisons only exist privately. The month 1 slice is the harness and the first two backends.
@@ -250,6 +259,7 @@ By 2026-10-04 you should be able to:
 - Show a public repo with a measured baseline, two LMCache backends compared, and a submitted upstream PR.
 - Attach py-spy to a running server and read the flame graph.
 - Read a C++ class definition without flinching.
+- Show a KV-cache-versus-no-cache tokens-per-second curve from your own nanoGPT code.
 
 ---
 
@@ -308,6 +318,15 @@ learncpp chapters 14 to 21 across the month: classes, operator overloading, move
 
 - **Designing Data-Intensive Applications, 2nd edition, Kleppmann and Riccomini** (paid, list $69.99). [oreilly.com](https://www.oreilly.com/library/view/designing-data-intensive-applications/9781098119058/). Published March 2026. Buy the second edition, not the first. Chapters on replication, partitioning and consistency this month, one chapter per Friday. Nine of fifteen listings said "large-scale distributed systems" before they said anything about ML.
 
+### Month 2 learning projects
+
+This is the month for the single most valuable learning project of the year, so the others are lighter.
+
+- **mini-vllm.** On top of your month 1 nanoGPT, build a serving engine in about 500 lines of PyTorch: a request queue, a paged KV block manager with a block table per sequence and a free list, and a scheduler that admits new requests each step while others are mid-decode, preempting when blocks run out. Compare static batching, where a batch waits for its slowest request, against your continuous batching on a workload with mixed output lengths. Report throughput and p99 latency for both. This is PagedAttention and continuous batching from the inside, and it is the project you will talk about in every interview for two years.
+- **radix prefix cache.** Add a radix tree over token prefixes to mini-vllm so requests sharing a prefix share KV blocks, the way SGLang's RadixAttention does. Measure block reuse and TTFT on your shared-prefix workload. Then break it by evicting the wrong node and watch what happens.
+- **eviction simulator.** A Python simulator that replays a request trace from llm-loadgen against a fixed-size KV store under LRU, LFU and a prefix-aware policy, and reports hit rate and bytes moved. This directly informs what kv-arena should measure and gives you a reason to open LMCache's eviction code.
+- **consistent hashing ring.** Two hundred lines in C++ or Python: a ring with virtual nodes, add and remove a node, count how many keys moved. The DDIA partitioning chapter made real, and the seed of the router you will build in month 4.
+
 ### The month 2 project: kv-arena, complete
 
 - **Week 1 (Oct 5 to 11):** Redis or Valkey backend added and measured. Second upstream PR submitted, ideally a real fix surfaced by your own harness.
@@ -327,6 +346,7 @@ By 2026-11-01 you should be able to:
 - Show four LMCache backends measured on two workload shapes, with cost per cached token.
 - Point to two submitted and at least one merged upstream pull request.
 - Read a CUDA source file and name what you do not understand.
+- Demonstrate your own continuous-batching scheduler beating static batching on p99 latency, in code you wrote.
 
 ---
 
@@ -378,6 +398,13 @@ Resources:
 - **Papers** (free, arXiv): GPTQ 2210.17323, AWQ 2306.00978, SmoothQuant 2211.10438, FP8 formats 2209.05433. Read the method section of each, not the whole paper.
 - **NVIDIA Transformer Engine FP8 primer** (free). [docs.nvidia.com/deeplearning/transformer-engine](https://docs.nvidia.com/deeplearning/transformer-engine/user-guide/examples/fp8_primer.html). E4M3 versus E5M2 and block scaling explained properly.
 - **lm-evaluation-harness** (free). [github.com/EleutherAI/lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluation-harness). GSM8K and MMLU runs against a vLLM endpoint, which is exactly the automation Baseten asks for.
+
+### Month 3 learning projects
+
+- **CUDA from zero, four kernels.** Vector add, parallel reduction, prefix scan and a tiled matmul, each written from PMPP's description, each with achieved bandwidth or FLOPs printed and compared against the RTX 4090's roofline. The reduction and scan are not in siboehm's article and they teach shared memory and synchronisation better than matmul does.
+- **roofline plotter.** A small Python script: give it a kernel's FLOPs and bytes moved and it plots the point against the roofline for the GPU you name. Every kernel you write this month gets a dot on this chart. It makes "memory bound" a thing you can see.
+- **flash attention forward in Triton.** Triton tutorial 6 gives you the skeleton. Write it, then measure against PyTorch's scaled dot product attention at four sequence lengths and explain the crossover. Do not attempt the backward pass.
+- **quantize by hand.** Implement per-channel INT8 weight quantization and dequantization for one Linear layer in plain PyTorch, measure output error against FP16, then run GPTQ from llm-compressor on the same layer and measure again. The gap between the two numbers is what GPTQ's Hessian trick buys, and you will remember it because you saw it.
 
 ### The month 3 project: kernel-notebook and a quantization study
 
@@ -446,6 +473,15 @@ Resources:
 **4. DDIA continues**
 
 Chapters on transactions, consensus, and batch and stream processing, one per Friday. By the end of this month you have read the book.
+
+### Month 4 learning projects
+
+The theme this month is build the naive version yourself first, then adopt the real one and understand what it adds.
+
+- **kv-router in Go.** Before you install the Gateway API Inference Extension, write a 300-line Go reverse proxy that polls each vLLM replica's `/metrics`, picks the replica with the lowest KV-cache utilisation, and forwards the request. Compare it against round-robin on shared-prefix traffic with llm-loadgen. Then install the real extension and read its scheduler to see what your version missed, which is prefix affinity and queue depth.
+- **token bucket and bounded queue, as a proxy.** A Go HTTP proxy in front of vLLM with a token-bucket rate limiter and a bounded request queue that returns 429 when full. Load it past capacity and show TTFT p99 staying flat while the unbounded version's goes vertical. This is both an interview classic and the seed of month 5's admission control.
+- **mini-reconciler.** Before Kubebuilder, a 200-line Go program using client-go that reads a target from a ConfigMap, reads KV utilisation from Prometheus, and scales a Deployment up or down every 30 seconds. Then rebuild it as a proper operator with Kubebuilder and notice what the framework gives you: caching, informers, requeue, status.
+- **Temporal, one workflow.** A workflow with three activities, the middle one failing randomly. Watch retries happen. Kill the worker mid-run and restart it and watch the workflow resume. Durability stops being a word.
 
 ### The month 4 project: inference-fleet
 
@@ -524,6 +560,13 @@ Resources:
 
 - **EAGLE-3** (free). [arXiv 2503.01840](https://arxiv.org/abs/2503.01840). What vLLM and SGLang ship. Read the method, then enable it in vLLM and measure.
 
+### Month 5 learning projects
+
+- **speculative decoding from scratch.** In PyTorch, with a small draft model and a larger target model from Hugging Face: draft k tokens, verify them in one target forward pass, accept the prefix that matches under rejection sampling, resample the first miss. Measure acceptance rate and wall-clock speedup at k of 2, 4 and 8. Then enable EAGLE-3 in vLLM and understand what a trained draft head adds over a plain small model. This is the second most valuable learning project of the year after mini-vllm.
+- **burn-rate alerts on synthetic data.** Generate a week of synthetic TTFT samples with a few incidents injected, implement the SRE Workbook's multi-window multi-burn-rate alerting, and count true and false alerts. Tune the windows. You will never again configure an alert threshold by feel.
+- **evals in fifty lines, then Inspect.** Before using Inspect, write the smallest possible harness: run each of ten tasks five times against your endpoint, compute pass rate with a Wilson confidence interval, print a table. Then port it to Inspect and see what a real framework gives you: sandboxing, scorers, logging, parallelism.
+- **attention variants and the KV bill.** Implement multi-head, grouped-query and multi-query attention in your nanoGPT and compute the KV bytes per token for each. Then read the MLA section of the DeepSeek-V2 paper and compute its KV size. One table, four rows, and you understand why every 2025 and 2026 model changed its attention.
+
 ### The month 5 project: inference-fleet, part two, plus the effective-cost index
 
 - **Week 1 (Dec 28 to Jan 3):** SLO document for inference-fleet committed. KEDA autoscaling on KV utilisation. Load test that pushes past capacity and shows admission control keeping TTFT p95 inside the SLO while shedding excess. Chart of TTFT p95 with and without admission control.
@@ -592,6 +635,14 @@ Resources:
 
 - **Glassdoor, machine learning infrastructure engineer interview questions** (free). Read fifty real ones.
 - **Your own repos.** Every question they ask maps to something you measured.
+
+### Month 6 learning projects
+
+Lighter, because this month is distribution. These are interview preparation with code.
+
+- **the kata set, timed.** An LRU cache with TTL, a token bucket, a bounded blocking queue with backpressure, and a top-k over a stream, each in Python and in Go or C++, each under 45 minutes from a blank file. Repeat until the times hold. These are the coding questions inference teams actually ask.
+- **three one-page designs.** Written, with a diagram each: a multi-tenant LLM serving platform with per-tenant SLOs, KV-cache sharing across replicas, and a public inference benchmark a vendor could not game. You have built pieces of all three, so each page is a summary of measured experience rather than a guess. Bring them to interviews.
+- **learning-lab README.** One index page across all the learning projects, each with its one number and one sentence on what it taught you. This is the page you send when someone asks "how did you learn this."
 
 ### 5. The first fifty applications
 

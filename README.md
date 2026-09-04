@@ -8,6 +8,8 @@ One document, six months, one target: from junior web SDE in Chennai to a hireab
 - **[`PROFILE.md`](./PROFILE.md)** — who this is for.
 - **`archive/`** — earlier systems (v2–v6). Kept for the record, not for reading.
 
-Projects live in their own public repos and are linked from `WEEKLY.md` as they ship. Month 1–2: kv-arena. Month 3: kernel-notebook. Month 4–5: inference-fleet. Month 5: effective-cost index.
+Portfolio projects live in their own public repos and are linked from `WEEKLY.md` as they ship. Month 1–2: kv-arena. Month 3: kernel-notebook. Month 4–5: inference-fleet. Month 5: effective-cost index.
+
+Learning projects (small from-scratch builds: paged KV cache, continuous-batching scheduler, speculative decoder, KV-aware router, and about twenty more) live in one repo, `learning-lab`, one folder each with the number measured.
 
 Building in public.
