@@ -810,6 +810,53 @@ Single posts each, so these are project seeds to validate, not confirmed demand.
 
 Four of the six are evals and cost. That is the hybrid this roadmap builds toward, and it is not a coincidence.
 
+## 14. The builders making six and seven figures on X: how they do it, how they post, and what you are missing
+
+You asked about Marc Lou and make.design. I read three profiles in full on 2026-09-04, the last 40 to 50 posts of each, and counted rather than vibed. One correction first: make.design is not a six-figure business. Its founder's own posts put it at $400 to $500 a month of revenue four days after launch against about $2,000 of costs. Marc Lou and Pieter Levels are the six and seven figure cases, and they are worth studying precisely because their numbers are public.
+
+| Account | Followers | On X since | Revenue, self-reported | Made from | Posts per day |
+|---|---|---|---|---|---|
+| Pieter Levels, @levelsio | 950k | 2013 | PhotoAI $83k/mo, VibeJam $44k/mo, InfiniteSlop $25k/mo, InteriorAI $22k/mo, X payouts $18k/mo, Nomads $15k/mo | Consumer AI products with GPUs behind them, a directory, creator payouts | About 10 |
+| Marc Lou, @marclou | 383k | 2014 | $82,221 in August 2026: TrustMRR $42k, DataFast $26k, CodeFast $4k, X payouts $4k, ShipFast $3k, six smaller | A verified-revenue directory and marketplace, web analytics, a course, a boilerplate that has made $1.2M in three years | 5 to 7 |
+| Siddharth, @buildwithsid, make.design | 7.8k | 2021 | $400 to $500 MRR at day four, about $2k costs, plus freelance rebuilds | An AI design generator, launched with a video that got 1,264 likes and 10,000 visitors in four days | 3 to 5 |
+
+### How the money is actually made
+
+- **A portfolio, not a product.** Marc runs ten products and the top two are 83% of his revenue. His own directory data, which he posted: the top 20% of startups capture 97% of revenue, and six startups out of 119 capture 80%. Levels runs six or more. One hit funds the long tail, and most of the tail makes $150 to $1,000 a month.
+- **The money product sells to the audience itself.** TrustMRR, a verified-MRR directory and acquisition marketplace, makes $42k a month from indie hackers. DataFast sells analytics to the same people. ShipFast sells a Next.js boilerplate to people who want to become Marc. Nomads.com is a directory for the people who follow Levels. These are picks and shovels aimed at their own followers, which is why the audience matters for them and why it would not matter the same way for you.
+- **Ten years of compounding.** Both joined X in 2013 and 2014. Marc's pinned post is "10 years as an entrepreneur and 1 takeaway: don't you dare give up." Siddharth, five years in with 7,800 followers, is where most people who do everything right are after five years.
+- **Audience is not money.** Marc, this week: "$29. That's how much this post made with 380K followers. Stop thinking an audience will make you rich. People don't buy just because they follow you. Sell painkillers, not vitamins." Levels earns $18k a month directly from X payouts at 950k followers, and that only works at the very top.
+- **Compute economics is now their story too.** Levels' Infinite Slop makes $15k a month against about $200k of costs to cover, and he posted the arithmetic: a video model at $0.0125 a second is $32,940 a month, "meaning if you can make more than that with a perpetual AI live stream, you're profitable." Marc says all his new products are agent-first, with an API, an MCP server with 60 tools and an llms.txt. Levels reports 60% of one product's traffic is MCP, of which "40% real usage and 60% scraping." The AI indie business is an inference-cost and agent-traffic problem now, which is your field.
+- **Features are the marketing.** Marc: "I hate marketing, so my entire marketing strategy is building features people want to share." And: "80% of what I build comes from you guys' feedback." The loop is ship, post, read replies, ship.
+
+### The posting pattern, measured
+
+- **Cadence is daily and high.** Ten, six and four posts a day respectively. No gaps. Typos left in, and Levels says so: "at least all these typos show I write my own tweets."
+- **Marc's mix over 45 posts:** 35% ship logs with a screenshot or a 20 to 60 second video, 140 to 400 likes each. 15% proof posts, meaning revenue screenshots and "first customer" moments, 700 to 2,000 likes. 15% customer or founder spotlights pulled from his own product's data, which are product marketing in disguise, 450 to 950 likes. 20% personal, health and travel, 100 to 700. 15% opinions.
+- **Levels' mix:** about half opinions, news and personal, 500 to 7,000 likes. A quarter ship logs with video, 60 to 500. A tenth economics and pricing arithmetic. He replies in his own feed constantly.
+- **Siddharth's mix:** 40% one-liners and engagement bait ("drop your .env file, I'll rate it out of 10" got 2,512 likes), 30% tool demos with video, 15% product, the rest memes. Product posts alone are his weakest category.
+- **What gets the most engagement, across all three:** proof, milestones and opinion. Product announcements alone are middling everywhere. The product rides on the person, and the person is built by proof.
+- **The bio is a pricing page.** Every product listed with its dollars per month. Levels and Marc both.
+- **Numbers go in the first line.** "I made $82,221 in August 2026." "I JUST GOT MY FIRST CUSTOMER." "37K visitors in 2 days." The number is the hook and the screenshot is the evidence.
+
+### What you are lacking, in order of how much it matters
+
+1. **Volume of visible output.** You have zero public infrastructure repos and zero posts with a chart. They post daily. The gap between you and Siddharth is not talent, it is that he ships and posts every day and you have not started. This is the only item on this list that is entirely in your control this week.
+2. **Time in the game.** Twelve years of compounding cannot be compressed. It can be started. Every month you wait moves the compounding curve one month right.
+3. **Anything live.** Siddharth, with 7,800 followers, got 10,000 visitors and 70 paid trials in four days because the product was visually demoable in a launch video. Infrastructure is less visually demoable, so your charts, terminal recordings and benchmark tables have to do that job, and they can. Section 13 shows a GPT-2 engine in C++ got 708 likes yesterday.
+4. **Distribution muscle.** Followers come from being in the conversation, replying in vLLM, SGLang, LMCache and GPU MODE threads every day, not from posting into the void. Fifteen minutes a day of real replies.
+5. **The proof habit.** They screenshot Stripe. You will screenshot benchmark tables, merged PRs and p99 charts. Same mechanism, different currency, and in your field the currency is rarer.
+6. **The right lane.** They win on taste and speed in consumer and indie tools, which is a crowded, cloner-heavy space. Siddharth himself: "a great product nobody knows about is still a failed product." Levels: "the SaaSpocalypse is at least partly real." Your edge is web polish times inference infrastructure, tools that infra people cannot design and designers cannot build. Compete there, not in theirs.
+
+### What to copy into this roadmap, starting this week
+
+- Post every learning project and every measured result the day it works, with a chart or a 30-second terminal video. The number goes in the first line.
+- Make your bio their bio: repos and headline results instead of products and dollars. "kv-arena: 4 KV backends benchmarked. 3 merged vLLM PRs. mini-vllm from scratch."
+- Turn the Sunday check into a public post. Shipped, measured, broke, next. Four lines, one image.
+- Fifteen minutes a day replying with substance in the inference threads. Not "great work." A number, a question or a correction.
+- Build the shareable artifact into each project: kv-arena gets a public results page, the month 5 cost probe gets a live index page. Those are your "features people want to share."
+- Do not chase their six figures with a consumer product this year. Your first six figures come from the job market path in section 0. The product path reopens on 2027-03-01 on evidence, and by then you will have the one asset they all started with: a body of public work and the habit of posting it.
+
 ## Verification notes
 
 All prices, versions and job requirements were checked on 2026-09-04. Things that could not be verified and are therefore stated cautiously or omitted: Colab pricing in INR, Vast.ai's accepted payment methods, NVIDIA DLI free course availability (site down), PMPP 5th edition price, Dynamo's latest stable tag, any named case of an India-based junior reaching $200k remote via inference open source. Resources deliberately excluded because they are stale: Hugging Face Text Generation Inference (archived March 2026), the Open LLM Leaderboard (retired March 2025), PMPP 4th edition (superseded), PyBullet, Kubeflow as a full platform, and all ROS 1 material.
