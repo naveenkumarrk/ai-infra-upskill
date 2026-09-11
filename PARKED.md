@@ -7,3 +7,4 @@
 | 2026-09-04 | Venture SaaS track (cost-intel as a business) | 2027-03-01 | Effective-cost index from month 5 has strangers using it |
 | 2026-09-04 | Rust | 2027-03-01 | Targeting candle/mistral.rs or an employer names it |
 | 2026-09-04 | Distributed training | 2027-06-01 | A role asks; literacy via Ultra-Scale Playbook + torchtitan |
+| 2026-09-11 | Chennai deep-tech weekend contribution (see CHENNAI-DEEPTECH.md) | rolling | Max ONE weekend day, only after the week's roadmap ship is on track; drop it if it eats kv-arena or the upstream PRs |

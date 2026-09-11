@@ -5,6 +5,7 @@ One document, six months, one target: from junior web SDE in Chennai to a hireab
 - **[`ROADMAP.md`](./ROADMAP.md)** — the whole plan. Honest comp math, what listings screen for, six months of resources and projects, compute budget in rupees, parked items, the ladder to 2030. Every figure verified 2026-09-04.
 - **[`WEEKLY.md`](./WEEKLY.md)** — the Sunday check: shipped (link), measured (number), broke, next ship.
 - **[`PARKED.md`](./PARKED.md)** — ideas set aside, each with a reopen date.
+- **[`CHENNAI-DEEPTECH.md`](./CHENNAI-DEEPTECH.md)** — weekend-contribution map of Chennai deep-tech (space, robotics, defence, drones): 11 companies scored, named engineering contacts, what to offer, message templates, and the honest constraints.
 - **[`PROFILE.md`](./PROFILE.md)** — who this is for.
 - **`archive/`** — earlier systems (v2–v6). Kept for the record, not for reading.
 
